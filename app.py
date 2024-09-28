@@ -1,7 +1,9 @@
 from flask import Flask,render_template,request
 import google.generativeai as genai
+import os
 model = genai.GenerativeModel("gemini-1.5-flash")
-genai.configure(api_key="AIzaSyAZCt1PgEuEzKIaqLShxzU4UoCP7G17erI")
+api= os.getenv("MAKERSUITE")
+genai.configure(api_key=api)
 
 app = Flask(__name__)
 
